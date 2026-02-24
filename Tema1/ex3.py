@@ -2,7 +2,7 @@ import math
 import time
 import random
 
-#Metoda Fracțiilor Continue
+#Metoda Fractiilor Continue
 
 def my_tan_lentz(x, eps=1e-10):
     # reducem argumentul la intervalul (-pi/2, pi/2)
@@ -53,7 +53,7 @@ def my_tan_lentz(x, eps=1e-10):
         
     return f
 
-# Metoda Aproximării Polinomiale
+# Metoda Aproximarii Polinomiale
 
 def my_tan_poly_base(x):
     # Funcția de bază pentru polinom, asumată a fi apelată cu x în [0, pi/4]
@@ -70,7 +70,7 @@ def my_tan_poly_base(x):
     return x + (x_2 * x) * P # x + x^3 * P(x^2)
 
 def my_tan_poly(x):
-    # reducem argumentul la intervalul (-pi/2, pi/2)
+    # reducem argumentul la intervalul (-pi/2, pi/2
     x = x % math.pi
     if x > math.pi / 2:
         x -= math.pi
@@ -81,7 +81,7 @@ def my_tan_poly(x):
 
     # tan(-x) = -tan(x)
     sign = 1
-    if x < 0:
+    if x <= 0:
         x = -x
         sign = -1
         
@@ -91,33 +91,32 @@ def my_tan_poly(x):
     else:
         return sign * my_tan_poly_base(x)
 
-# generăm valori și comparăm metodele
+# generam valori si comparam metodele
 
 def run_comparison():
     N = 10000
-    # Generăm 10.000 numere aleatoare în (-pi/2, pi/2)
+    # generam 10.000 numere aleatoare n (-pi/2, pi/2)
     valori_x = [random.uniform(-math.pi/2 + 1e-5, math.pi/2 - 1e-5) for _ in range(N)]
     
-    # 1. Timp și eroare pentru Math (Referința)
+    # timp si eroare pentru Math (Referinta)
     start_math = time.perf_counter()
     rezultate_math = [math.tan(x) for x in valori_x]
     timp_math = time.perf_counter() - start_math
     
-    # 2. Timp și eroare pentru Metoda Lentz
+    # timp si eroare pentru Metoda Lentz
     start_lentz = time.perf_counter()
     rezultate_lentz = [my_tan_lentz(x) for x in valori_x]
     timp_lentz = time.perf_counter() - start_lentz
     
     eroare_max_lentz = max(abs(rezultate_math[i] - rezultate_lentz[i]) for i in range(N))
     
-    # 3. Timp și eroare pentru Metoda Polinomială
+    #timp si eroare pentru Metoda Polinomiala
     start_poly = time.perf_counter()
     rezultate_poly = [my_tan_poly(x) for x in valori_x]
     timp_poly = time.perf_counter() - start_poly
     
     eroare_max_poly = max(abs(rezultate_math[i] - rezultate_poly[i]) for i in range(N))
     
-    # Afișarea rezultatelor
     print(f"--- Comparație pe {N} de valori ---")
     print(f"Timp executie math.tan():    {timp_math:.6f} secunde")
     print("-" * 40)
@@ -131,4 +130,4 @@ def run_comparison():
 
 # Rulare program
 if __name__ == "__main__":
-    run_comparison()
+    run_comparison()     
