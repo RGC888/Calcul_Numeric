@@ -81,7 +81,7 @@ def my_tan_poly(x):
 
     # tan(-x) = -tan(x)
     sign = 1
-    if x <= 0:
+    if x < 0:
         x = -x
         sign = -1
         
