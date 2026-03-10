@@ -14,7 +14,7 @@ b = np.random.rand(n)
 
 #calculam solutia cu biblioteca np
 xlib = np.linalg.solve(A_init, b)
-####################################################################################terbuie sa afisam descompunerea in LU
+####################################################################################terbuie sa afisam descompunerea in LU?
 
 print("\nSolutia cu biblioteca (numpy):")
 print(xlib)
@@ -81,7 +81,7 @@ for i in reversed(range(n)):
 print("\nSolutia cu LDLT:")
 print(xChol)
 
-#facem inmultirea manuala pentru a calcula A_init xChol
+#facem inmultirea manuala pentru a calcula A_init * xChol
 Ax = np.zeros(n)
 
 for i in range(n):
