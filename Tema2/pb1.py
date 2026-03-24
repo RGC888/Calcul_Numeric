@@ -1,3 +1,10 @@
+#Butnaru Stefan - 310910401RSL231036 - butnarustefan04@gmail.com - butnarustefan
+#Rusu George-Constantin - 310910401RSL221191 - rusugeorge333@gmail.com - George
+# 25% AI
+# Toate formulele si algoritmii au fost explicati in clasa de catre laborant; avem link-ul cu explicatiile mai jos
+# https://onedrive.live.com/personal/401895cf656dd8f0/_layouts/15/Doc.aspx?sourcedoc={6247276d-0cb1-4847-a468-ddaad611c641}&action=view&redeem=aHR0cHM6Ly8xZHJ2Lm1zL28vYy80MDE4OTVjZjY1NmRkOGYwL0lnQnRKMGRpc1F4SFNLUm8zYXJXRWNaQkFVMmVseWFocXpUM05vREg4NUxrWjU4P2U9OHBUMmFr&wd=target%28Tema2.one%7C5da459bd-5a8d-41a7-b7b3-7d61e34b0a2f%2FTema2%7C3609a860-3d07-498c-9c0e-574625b9c8f3%2F%29&wdorigin=NavigationUrl
+
+
 import numpy as np
 
 #citim datele de intrare
@@ -14,7 +21,6 @@ b = np.random.rand(n)
 
 #calculam solutia cu biblioteca np
 xlib = np.linalg.solve(A_init, b)
-####################################################################################terbuie sa afisam descompunerea in LU?
 
 print("\nSolutia cu biblioteca (numpy):")
 print(xlib)
